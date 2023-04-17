@@ -18,6 +18,8 @@ public class CameraMovement : MonoBehaviour
     private float currentHeight;
     private float currentZoom;
 
+    [SerializeField] private GameObject focusPoint;
+
     private CinemachineVirtualCamera vCam;
     private CinemachineTransposer transposer;
 
@@ -48,9 +50,9 @@ public class CameraMovement : MonoBehaviour
         currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
 
         // Update the camera position
-        Vector3 newPosition = transposer.m_FollowOffset;
+        Vector3 newPosition = focusPoint.transform.localPosition;
         newPosition.y = currentHeight;
-        transposer.m_FollowOffset = newPosition;
+        focusPoint.transform.localPosition = newPosition;
     }
 
     void ZoomCameraMovement()

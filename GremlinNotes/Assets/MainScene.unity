@@ -369,7 +369,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &688224819
 GameObject:
@@ -505,14 +505,14 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 0
-  m_LookAt: {fileID: 850448446}
+  m_LookAt: {fileID: 1191959886}
   m_Follow: {fileID: 1191959886}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 1000
-    Dutch: 17
+    Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
@@ -539,8 +539,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822978387}
-  m_LocalRotation: {x: 0.0019999861, y: -1e-45, z: -0, w: 0.99999803}
-  m_LocalPosition: {x: 0, y: 4.25, z: -10}
+  m_LocalRotation: {x: 0.22741082, y: -0.0000001734349, z: 0.000000040502176, w: 0.97379893}
+  m_LocalPosition: {x: 0.0000034890704, y: 4.939999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -567,6 +567,7 @@ MonoBehaviour:
   zoomSpeed: 100
   maxZoom: 10
   minZoom: 1
+  focusPoint: {fileID: 1191959885}
 --- !u!1 &850448444
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +620,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166204699
 GameObject:
@@ -747,7 +748,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659034320
 GameObject:
@@ -828,7 +829,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659034320}
-  m_LocalRotation: {x: -0, y: 1e-45, z: 0.14780942, w: 0.9890159}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -979,6 +980,7 @@ MonoBehaviour:
   zoomSpeed: 2
   maxZoom: 10
   minZoom: 1
+  focusPoint: {fileID: 0}
 --- !u!114 &1659034326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4.25, z: -10}
+  m_FollowOffset: {x: 0, y: 4.939999, z: -10}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
