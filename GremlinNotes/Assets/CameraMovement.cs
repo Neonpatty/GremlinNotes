@@ -16,26 +16,31 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float zoomSpeed = 2.0f;
     [SerializeField] float maxZoom = 10.0f;
     [SerializeField] float minZoom = 1.0f;
+    [SerializeField] GameObject startPoint;
 
-    private float currentHeight;
-    private float currentZoom;
 
-    [SerializeField] private GameObject focusPoint;
+    float currentHeight;
+    float currentZoom;
 
-    private CinemachineVirtualCamera vCam;
-    private CinemachineTransposer transposer;
+    [SerializeField] GameObject focusPoint;
+
+    [SerializeField] CinemachineVirtualCamera vCam;
+    CinemachineTransposer transposer;
 
     #endregion
+
+    void Awake()
+    {
+        transposer = vCam.GetCinemachineComponent<CinemachineTransposer>();
+    }
+
     void Start()
     {
-        vCam = GetComponent<CinemachineVirtualCamera>();
-        transposer = vCam.GetCinemachineComponent<CinemachineTransposer>();
-
         maxHeight = maxHeightPoint.transform.position.y;
         minHeight = minHeightPoint.transform.position.y;
 
         transposer.m_FollowOffset.y = minHeight;
-        transposer.m_FollowOffset.z = maxZoom;
+        transposer.m_FollowOffset.x = startPoint.transform.position.x;
     }
 
     void Update()
