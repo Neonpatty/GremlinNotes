@@ -9,6 +9,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float verticalSpeed = 2.0f;
     [SerializeField] float maxHeight = 10.0f;
     [SerializeField] float minHeight = 1.0f;
+    [SerializeField] GameObject maxHeightPoint;
+    [SerializeField] GameObject minHeightPoint;
 
     [Header("Zooom Movement Variables")]
     [SerializeField] float zoomSpeed = 2.0f;
@@ -29,6 +31,9 @@ public class CameraMovement : MonoBehaviour
         vCam = GetComponent<CinemachineVirtualCamera>();
         transposer = vCam.GetCinemachineComponent<CinemachineTransposer>();
 
+        maxHeight = maxHeightPoint.transform.position.y;
+        minHeight = minHeightPoint.transform.position.y;
+
         transposer.m_FollowOffset.y = minHeight;
         transposer.m_FollowOffset.z = maxZoom;
     }
@@ -41,15 +46,11 @@ public class CameraMovement : MonoBehaviour
 
     void VerticalCameraMovement()
     {
-        // Get the vertical input
         float verticalInput = Input.GetAxis("Vertical");
 
-
-        // Calculate the new height
         currentHeight += verticalInput * verticalSpeed * Time.deltaTime;
         currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
 
-        // Update the camera position
         Vector3 newPosition = focusPoint.transform.localPosition;
         newPosition.y = currentHeight;
         focusPoint.transform.localPosition = newPosition;
@@ -59,7 +60,7 @@ public class CameraMovement : MonoBehaviour
     {
         float ScrollInput = Input.GetAxis("Mouse ScrollWheel");
 
-        currentZoom += ScrollInput * zoomSpeed * Time.deltaTime;
+        currentZoom -= ScrollInput * zoomSpeed * Time.deltaTime;
         currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
 
         Vector3 newPosition = transposer.m_FollowOffset;
