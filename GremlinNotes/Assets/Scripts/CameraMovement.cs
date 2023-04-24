@@ -5,6 +5,8 @@ public class CameraMovement : MonoBehaviour
 {
     #region Variables
 
+
+
     [Header("Vertical Movement Varibles")]
     [SerializeField] float verticalSpeed = 2.0f;
     [SerializeField] float maxHeight = 10.0f;
